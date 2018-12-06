@@ -1,1 +1,25 @@
-<p>Stats (last {{ statsX }})</p>
+<p>Stats (last {{ limit }})</p>
+<div *ngIf="stats$ | async as stats">
+    <table>
+        <tr>
+          <th></th>
+          <th colspan="5" class="cold">Cold</th>
+          <th colspan="27">Neutral</th>
+          <th colspan="5" class="hot">Hot</th>
+        </tr>
+        <tr>
+          <td>Slot</td>
+          <td *ngFor="let stat of stats"
+              [ngClass]="getClassByValue(stat.result)">
+              {{ stat.result }}
+          </td>
+        </tr>
+        <tr>
+          <td>Hits</td>
+          <td *ngFor="let stat of stats; let i = index;"
+              [ngClass]="{ cold: i < 5, hot: 31 < i}">
+              {{ stat.count }}
+          </td>
+        </tr>
+    </table>
+</div>

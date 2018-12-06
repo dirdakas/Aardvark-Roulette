@@ -63,10 +63,10 @@ export class EventsComponent implements OnInit {
         take(1),
         tap((res: IGameResponse) => {
           if (res.outcome) {
-            console.log('res', res);
             this.logsService.updateLogs(`Result is ${res.outcome}`);
             this.gameService.updateEvent(res);
             this.gameService.changeGameStatusLoaded();
+            this.gameService.updateStats();
             this.checkForNewGame();
           } else {
             this.logsService.updateLogs('Still no result continue spinning');

@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ApiUrlComponent } from './api-url.component';
@@ -8,6 +9,7 @@ describe('ApiUrlComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ FormsModule ],
       declarations: [ ApiUrlComponent ]
     })
     .compileComponents();
