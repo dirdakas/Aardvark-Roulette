@@ -1,0 +1,58 @@
+.game-board-wrapper
+  display: table
+  width: 100%
+
+  .left-side
+    width: 70%
+    float: left
+
+    .square
+      display: inline-block
+      padding: 8px
+      color: #ffffff
+      border-radius: 5px
+
+      &.green
+        background-color: #449D44
+        border-color: #398439
+
+      &.red
+        background-color: #D9534F
+        border-color: #AC2925
+
+      &.black
+        background-color: #000000
+        border-color: #222222
+
+      &.result
+        animation: blink 1s linear infinite
+
+        @keyframes blink
+          0%
+            opacity: 0
+          100%
+            opacity: 1
+
+      &:hover
+        color: #333333
+        text-decoration: none
+        cursor: pointer
+
+  .right-side
+    width: 30%
+    float: right
+
+    .loader
+      border: 16px solid #f3f3f3
+      border-radius: 50%
+      border-top: 16px solid #3498db
+      width: 60px
+      height: 60px
+      animation: spin 0.1s linear infinite
+
+    @keyframes spin
+      0%
+        transform: rotate(0deg)
+      100%
+        transform: rotate(360deg)
+  

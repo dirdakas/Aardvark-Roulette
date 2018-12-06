@@ -1,3 +1,12 @@
-<p>
-  events works!
-</p>
+<p>Events</p>
+<div *ngIf="gameEvents$ | async as gameEvents">
+    <div *ngFor="let game of gameEvents"
+         class="event">
+        <span *ngIf="game.outcome">
+          Game {{ game.id }} ended, result is {{ game.outcome }}
+        </span>
+        <span *ngIf="!game.outcome && isTimerVisible">
+          Game {{ game.id }} start in {{ countdown }} sec
+        </span>
+    </div>
+</div>

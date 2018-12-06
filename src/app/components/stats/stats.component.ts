@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stats.component.sass']
 })
 export class StatsComponent implements OnInit {
+  statsX = 200;
 
   constructor() { }
 

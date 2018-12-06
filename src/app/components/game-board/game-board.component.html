@@ -1,3 +1,19 @@
-<p>
-  game-board works!
-</p>
+<p>Game board</p>
+<div class="game-board-wrapper">
+    <div class="left-side">
+        <div *ngIf="gameBoard$ | async as board else loadingBoard" class="board-wrapper">
+            <div *ngFor="let slot of board.slots; let i = index;"
+                 class="square {{ slot.color }} result"
+                 [ngClass]="{ result: outcome === slot.positionToId }">
+              {{ slot.positionToId }}
+            </div>
+        </div>
+    </div>
+    <div class="right-side">
+        <div *ngIf="isLoading$ | async" class="loader"></div>
+    </div>
+</div>
+
+<ng-template #loadingBoard>
+  Loading board .....
+</ng-template>
