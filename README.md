@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
   Install `nodeJS` from `https://nodejs.org/en/download/`
 
-  Run `npm i`
+  Run `npm i` in cmd / terminal
 
 ## Development server
 
